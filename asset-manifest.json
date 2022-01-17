@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/restclient/static/css/main.073c9b0a.css",
+    "main.js": "/restclient/static/js/main.301c7ef0.js",
+    "static/js/787.63f4fb8b.chunk.js": "/restclient/static/js/787.63f4fb8b.chunk.js",
+    "static/media/logo.svg": "/restclient/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/restclient/index.html",
+    "main.073c9b0a.css.map": "/restclient/static/css/main.073c9b0a.css.map",
+    "main.301c7ef0.js.map": "/restclient/static/js/main.301c7ef0.js.map",
+    "787.63f4fb8b.chunk.js.map": "/restclient/static/js/787.63f4fb8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.301c7ef0.js"
+  ]
+}
