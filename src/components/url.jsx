@@ -30,7 +30,7 @@ const Url = () => {
         <div className="col-lg-2 col-md-3 col-sm-12">
           Action:
           <br />
-          <button className="btn btn-primary w-100" onclick="sendRequest(this);">
+          <button className="btn btn-primary w-100">
             <i className="bi bi-send"></i>
             &nbsp;Send
           </button>

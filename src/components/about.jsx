@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="container mt-4">
-      <div class="text-center">
+      <div className="text-center">
         Rest client is a light weight but powerfull tool to test your rest apis with support of analyze and validate
         responses.
         <br />
