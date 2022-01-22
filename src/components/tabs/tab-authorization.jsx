@@ -35,27 +35,31 @@ const TabAuthorization = () => {
   function getAuthContent() {
     if (authType === config.authTypes.NO_AUTH) {
       return (
-        <p className="text-center">
-          This request does not use any authorization.
-          <br />
-          <a href="#" className="text-decoration-none">
-            Learn more about authorization <i className="bi bi-box-arrow-up-right"></i>
-          </a>
-        </p>
+        <div className=" p-3 bg-light rounded">
+          <p className="text-center">
+            This request does not use any authorization.
+            <br />
+            <a href="#" className="text-decoration-none">
+              Learn more about authorization <i className="bi bi-box-arrow-up-right"></i>
+            </a>
+          </p>
+        </div>
       );
     }
 
     if (authType === config.authTypes.BEARER_TOKEN) {
       return (
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" placeholder="Auth bearer token" />
-          <label for="floatingInput">Auth bearer token</label>
+        <div className=" p-3 bg-light rounded">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="Auth bearer token" />
+            <label for="floatingInput">Auth bearer token</label>
+          </div>
         </div>
       );
     }
     if (authType === config.authTypes.BASIC_AUTH) {
       return (
-        <div className="">
+        <div className=" p-3 bg-light rounded">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" placeholder="Username" />
             <label for="floatingInput">Username</label>
@@ -71,7 +75,7 @@ const TabAuthorization = () => {
                 type="checkbox"
                 onChange={(e) => setShowPassword(e.currentTarget.checked)}
               />
-              {showPassword ? "Hide" : "Show"} password
+              {showPassword ? <span className="text-danger">Hide password !</span> : <span>Show password</span>}
             </label>
           </div>
         </div>
