@@ -1,5 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Mochiy+Pop+P+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Luckiest+Guy&display=swap");
 
-.cursor-pointe {
+* {
+  font-family: "Itim", cursive;
+}
+
+body {
+  /* background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+}
+
+header {
+  /* background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+}
+.logo {
+  font-family: "Luckiest Guy", cursive;
+  background: -webkit-linear-gradient(#00d2ff, #3a47d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cursor-pointer {
   cursor: pointer !important;
 }

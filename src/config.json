@@ -1,0 +1,7 @@
+{
+  "authTypes": {
+    "NO_AUTH": "no-auth",
+    "BEARER_TOKEN": "bearer-token",
+    "BASIC_AUTH": "basic-auth"
+  }
+}

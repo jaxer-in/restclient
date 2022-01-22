@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import TabAuthorization from "./tabs/tab-authorization";
+import TabHeader from "./tabs/tab-header";
+import TabParam from "./tabs/tab-param";
+import TabRequestBody from "./tabs/tab-request-body";
 
 const Payload = () => {
   const [activeTab, setActiveTab] = useState([""]);
-
-  let tabClass = "tab-pane";
 
   useEffect(() => {}, []);
 
@@ -17,7 +19,7 @@ const Payload = () => {
         <div className="card-header">
           <h5 className="m-0 p-2">Request / Payloads</h5>
         </div>
-        <div className="card-body pb-0">
+        <div className="card-body">
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
               <button
@@ -73,75 +75,24 @@ const Payload = () => {
           <div class="tab-content" id="nav-tabContent">
             {/* <!-- Params --> */}
             <div class="tab-pane fade" id="nav-params" role="tabpanel" aria-labelledby="nav-params-tab">
-              <div id="idDivParams" className="my-2"></div>
-              <div className="row my-2">
-                <div className="col-lg-3 col-md-4 col-sm-4">
-                  <button className="btn btn-outline-primary" onclick="addParam()">
-                    Add params
-                  </button>
-                </div>
-              </div>
+              <TabParam />
             </div>
             {/* <!-- Headers --> */}
             <div class="tab-pane fade" id="nav-headers" role="tabpanel" aria-labelledby="nav-headers-tab">
-              <div className={tabClass} id="headers" role="tabpanel" aria-labelledby="headers-tab">
-                <div className="my-2" id="idDivHeaders"></div>
-                <div className="row my-2">
-                  <div className="col-lg-3 col-md-4 col-sm-6">
-                    <button className="btn btn-outline-primary" onclick="addHeader()">
-                      Add headers
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <TabHeader />
             </div>
             {/* <!-- Authorizations --> */}
             <div class="tab-pane fade" id="nav-authorizations" role="tabpanel" aria-labelledby="nav-authorizations-tab">
-              <div className="col-12 my-2" id="idDivAuthorizations"></div>
-              <div className="row my-2">
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <button className="btn btn-outline-primary" onclick="addAuthorizations()">
-                    Add authorizations
-                  </button>
-                </div>
-              </div>
+              <TabAuthorization />
             </div>
-            {/* <!-- Request body --> */}
             <div
               class="tab-pane fade show active"
               id="nav-request-body"
               role="tabpanel"
               aria-labelledby="nav-request-body-tab"
             >
-              <div className="row my-2">
-                <div className="col-lg-10 col-md-12 col-sm-12">
-                  <textarea id="idTextRequestBody" className="form-control" rows="8"></textarea>
-                </div>
-                <div className="col-lg-2 col-md-12 col-sm-12">
-                  <div className="row my-2">
-                    <div className="col-lg-12 col-md-4 col-sm-4 mb-1">
-                      <select id="idSelectMethod" className="form-control">
-                        <option value="json">text / json</option>
-                        <option value="html">text / html</option>
-                        <option value="xml">text / xml</option>
-                      </select>
-                    </div>
-
-                    <div className="col-lg-12 col-md-4 col-sm-4 col-6 mb-1">
-                      <button className="btn btn-light w-100" onclick="beautifyRequestBody()">
-                        Beautify
-                      </button>
-                    </div>
-                    <div className="col-lg-12 col-md-4 col-sm-4 col-6 mb-1">
-                      <button className="btn btn-light w-100" onclick="minifyRequestBody();">
-                        Minify
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TabRequestBody />
             </div>
-            {/* <!-- Request body --> */}
           </div>
         </div>
       </div>
