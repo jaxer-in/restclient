@@ -3,5 +3,11 @@
     "NO_AUTH": "no-auth",
     "BEARER_TOKEN": "bearer-token",
     "BASIC_AUTH": "basic-auth"
+  },
+
+  "links": {
+    "repository": "https://github.com/jaxer-in/restclient",
+    "license": "https://github.com/jaxer-in/restclient/blob/main/LICENSE",
+    "openSource": "https://opensource.org"
   }
 }

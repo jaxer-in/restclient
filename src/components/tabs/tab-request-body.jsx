@@ -10,11 +10,14 @@ const TabRequestBody = () => {
         <div className="col-lg-2 col-md-12 col-sm-12">
           <div className="row my-2">
             <div className="col-lg-12 col-md-4 col-sm-4 mb-1">
-              <select id="idSelectMethod" className="form-control">
-                <option value="json">text / json</option>
-                <option value="html">text / html</option>
-                <option value="xml">text / xml</option>
-              </select>
+              <div className="form-floating mb-3">
+                <select className="form-select" id="floatingSelect">
+                  <option value="json">text / json</option>
+                  <option value="html">text / html</option>
+                  <option value="xml">text / xml</option>
+                </select>
+                <label for="floatingSelect">Content type</label>
+              </div>
             </div>
 
             <div className="col-lg-12 col-md-4 col-sm-4 col-6 mb-1">
