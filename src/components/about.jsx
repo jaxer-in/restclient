@@ -1,4 +1,5 @@
 import config from "../config.json";
+import Anchor from "./common/anchor";
 
 const About = () => {
   return (
@@ -19,21 +20,13 @@ const About = () => {
           advacne rest client.
         </p>
         <p className="mb-2 text-muted">
-          <i className="bi bi-arrow-return-right"></i>&nbsp; Rest client is an&nbsp;
-          <a href={config.links.openSource} target="_blank" rel="noopener noreferrer">
-            Open Source <i className="bi bi-box-arrow-up-right"></i>
-          </a>
-          &nbsp; project, licensed under the&nbsp;
-          <a href={config.links.license} target="_blank" rel="noopener noreferrer">
-            Apache License 2.0 <i className="bi bi-box-arrow-up-right"></i>
-          </a>
-          .
+          <i className="bi bi-arrow-return-right"></i>&nbsp; Rest client is an
+          <Anchor href={config.links.openSource}>Open Source</Anchor> project, licensed under the
+          <Anchor href={config.links.license}>Apache License 2.0</Anchor>.
         </p>
         <p className="mb-1 text-muted">
-          <i className="bi bi-arrow-return-right"></i>&nbsp; Full source code is available on&nbsp;
-          <a href={config.links.repository} target="_blank" rel="noopener noreferrer">
-            github <i className="bi bi-github"></i>
-          </a>
+          <i className="bi bi-arrow-return-right"></i>&nbsp; Full source code is available on
+          <Anchor href={config.links.repository}>github</Anchor>
         </p>
       </div>
     </div>

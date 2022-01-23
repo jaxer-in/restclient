@@ -1,7 +1,10 @@
 const FloatingInput = (props) => {
   const idRandom = `id-floating-input-${new Date().getTime()}`;
+
+  const cssClass = props.addBottomMargin ? "form-floating mb-2" : "form-floating";
+
   return (
-    <div class="form-floating mb-2">
+    <div class={cssClass}>
       <input
         id={idRandom}
         type={props.type}
@@ -18,6 +21,7 @@ const FloatingInput = (props) => {
 FloatingInput.defaultProps = {
   type: "text",
   value: "",
+  addBottomMargin: true,
 };
 
 export default FloatingInput;

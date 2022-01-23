@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FloatingInput from "../common/floating-input";
 import config from "../../config.json";
+import Anchor from "../common/anchor";
 
 const TabAuthorization = () => {
   const [authType, setAuthType] = useState(config.authTypes.NO_AUTH);
@@ -29,35 +30,34 @@ const TabAuthorization = () => {
             <label for="floatingSelect">Authorization type</label>
           </div>
         </div>
-        <div className="col-lg-9 col-md-8 col-sm-12">{getAuthContent()}</div>
+        <div className="col-lg-9 col-md-8 col-sm-12">
+          <div className="bg-light rounded p-5">{getAuthContent()}</div>
+        </div>
       </div>
     </div>
   );
   function getAuthContent() {
     if (authType === config.authTypes.NO_AUTH) {
       return (
-        <div className=" p-3 bg-light rounded">
-          <p className="text-center">
-            This request does not use any authorization.
-            <br />
-            <a href="#" className="text-decoration-none">
-              Learn more about authorization <i className="bi bi-box-arrow-up-right"></i>
-            </a>
-          </p>
-        </div>
+        <p className="text-center">
+          This request does not use any authorization.
+          <br />
+          <Anchor href="#">Learn more about authorization</Anchor>
+        </p>
       );
     }
 
     if (authType === config.authTypes.BEARER_TOKEN) {
       return (
-        <div className=" p-3 bg-light rounded">
+        <div>
+          <p className="lead text-muted m-0">Add your bearer token here</p>
           <FloatingInput placeholder="Auth bearer token" />
         </div>
       );
     }
     if (authType === config.authTypes.BASIC_AUTH) {
       return (
-        <div className=" p-3 bg-light rounded">
+        <div>
           <FloatingInput placeholder="Username" />
           <FloatingInput placeholder="Password" type={showPassword ? "text" : "password"} />
           <div class="form-check mt-2">

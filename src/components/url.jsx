@@ -20,6 +20,7 @@ const Url = () => {
           <FloatingInput
             placeholder="Request url or server endpoint"
             value="http://jsonplaceholder.typicode.com/posts"
+            addBottomMargin={false}
           />
         </div>
 
