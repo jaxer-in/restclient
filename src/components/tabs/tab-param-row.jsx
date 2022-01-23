@@ -1,3 +1,5 @@
+import FloatingInput from "../common/floating-input";
+
 const TabParamRow = ({ param, handleRemoveParam, handleKeyChange, handleValueChange }) => {
   const id = `id-param-row-${param.id}`;
   const keyName = `param-key-${param.id}`;
@@ -6,6 +8,7 @@ const TabParamRow = ({ param, handleRemoveParam, handleKeyChange, handleValueCha
   return (
     <div class="row mb-3" id={id}>
       <div class="col-sm-5 col-12 mb-1">
+        {/* <FloatingInput placeholder="Param key" onChange={handleKeyChange} /> */}
         <input
           class="form-control"
           placeholder="Param key"

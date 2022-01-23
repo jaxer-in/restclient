@@ -3,20 +3,22 @@ import config from "../config.json";
 const About = () => {
   return (
     <div className="container mt-4">
-      <div className="text-start">
+      <div className="text-start px-1">
         <h4>
           About rest client&nbsp;
           <i className="bi bi-terminal"></i>
         </h4>
-        <p className="mb-1 text-muted">
+      </div>
+      <div className="px-3">
+        <p className="mb-2 text-muted">
           <i className="bi bi-arrow-return-right"></i>&nbsp; Rest client is a light weight but powerfull tool to test
           your rest apis with support of analyze and validate responses.
         </p>
-        <p className="mb-1 text-muted">
+        <p className="mb-2 text-muted">
           <i className="bi bi-arrow-return-right"></i>&nbsp; Advance features like auto save last request makes it
           advacne rest client.
         </p>
-        <p className="mb-1 text-muted">
+        <p className="mb-2 text-muted">
           <i className="bi bi-arrow-return-right"></i>&nbsp; Rest client is an&nbsp;
           <a href={config.links.openSource} target="_blank" rel="noopener noreferrer">
             Open Source <i className="bi bi-box-arrow-up-right"></i>

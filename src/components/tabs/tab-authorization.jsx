@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FloatingInput from "../common/floating-input";
 import config from "../../config.json";
 
 const TabAuthorization = () => {
@@ -50,24 +51,15 @@ const TabAuthorization = () => {
     if (authType === config.authTypes.BEARER_TOKEN) {
       return (
         <div className=" p-3 bg-light rounded">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" placeholder="Auth bearer token" />
-            <label for="floatingInput">Auth bearer token</label>
-          </div>
+          <FloatingInput placeholder="Auth bearer token" />
         </div>
       );
     }
     if (authType === config.authTypes.BASIC_AUTH) {
       return (
         <div className=" p-3 bg-light rounded">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" placeholder="Username" />
-            <label for="floatingInput">Username</label>
-          </div>
-          <div class="form-floating">
-            <input type={showPassword ? "text" : "password"} class="form-control" placeholder="Password" />
-            <label for="floatingPassword">Password</label>
-          </div>
+          <FloatingInput placeholder="Username" />
+          <FloatingInput placeholder="Password" type={showPassword ? "text" : "password"} />
           <div class="form-check mt-2">
             <label class="form-check-label cursor-pointer">
               <input

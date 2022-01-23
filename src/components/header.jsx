@@ -3,7 +3,7 @@ const Header = () => {
     <header className="py-2 mb-3 shadow">
       {/* <!-- Image and text --> */}
       <nav class="container navbar navbar-light bg-white">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" className="text-decoration-none">
           <h2 className="logo text-center m-0">
             <i className="bi bi-terminal"></i>
             {/* <IconSend w="48" h="48" /> */}

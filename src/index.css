@@ -28,3 +28,7 @@ a {
 a:hover {
   text-decoration: underline !important;
 }
+
+a.navbar-brand:hover {
+  text-decoration: none !important;
+}

@@ -1,3 +1,5 @@
+import FloatingInput from "../components/common/floating-input";
+
 const Url = () => {
   return (
     <div className="container">
@@ -15,15 +17,10 @@ const Url = () => {
         </div>
 
         <div className="col-lg-8 col-md-6 col-sm-12">
-          <div class="form-floating">
-            <input
-              id="idInputUrl"
-              className="form-control"
-              placeholder="http://www.somehost.com/end-point"
-              value="http://jsonplaceholder.typicode.com/posts"
-            />
-            <label for="floatingInput">Request url/endpoint</label>
-          </div>
+          <FloatingInput
+            placeholder="Request url or server endpoint"
+            value="http://jsonplaceholder.typicode.com/posts"
+          />
         </div>
 
         <div className="col-lg-2 col-md-3 col-sm-12 d-flex">
