@@ -1,33 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FloatingInput from "../components/common/floating-input";
 import config from "../config.json";
 
-const Url = () => {
-  const [requestMethodLabelClass, setRequestMethodLabelClass] = useState("text-primary");
-
-  const handleChangeRequestMethod = (e) => {
-    const value = e.currentTarget.value;
-    // console.log(value);
-    if (value === config.requestMethods.get) {
-      setRequestMethodLabelClass("text-primary");
-      return;
-    }
-
-    if (value === config.requestMethods.post || value === config.requestMethods.put) {
-      setRequestMethodLabelClass("text-success");
-      return;
-    }
-
-    if (value === config.requestMethods.head) {
-      setRequestMethodLabelClass("text-secondary");
-      return;
-    }
-
-    if (value === config.requestMethods.delete) {
-      setRequestMethodLabelClass("text-danger");
-      return;
-    }
-  };
+const Url = ({ requestMethod, requestUrl, handleChangeRequestMethod, handleChangeRequestUrl }) => {
+  let requestMethodLabelClass = "";
+  if (requestMethod === config.requestMethods.get) {
+    requestMethodLabelClass = "text-primary";
+  } else if (requestMethod === config.requestMethods.post || requestMethod === config.requestMethods.put) {
+    requestMethodLabelClass = "text-success";
+  } else if (requestMethod === config.requestMethods.head) {
+    requestMethodLabelClass = "text-secondary";
+  } else if (requestMethod === config.requestMethods.delete) {
+    requestMethodLabelClass = "text-danger is-invalid";
+    requestMethodLabelClass = "text-danger";
+  }
 
   return (
     <div className="container">
@@ -45,7 +31,7 @@ const Url = () => {
               <option value={config.requestMethods.head}>HEAD</option>
               <option value={config.requestMethods.delete}>DELETE</option>
             </select>
-            <label for="idselectRequestMethod" className={requestMethodLabelClass} style={{ opacity: "0.9" }}>
+            <label htmlFor="idselectRequestMethod" className={requestMethodLabelClass} style={{ opacity: "0.9" }}>
               Request method
             </label>
           </div>
@@ -54,8 +40,9 @@ const Url = () => {
         <div className="col-lg-8 col-md-6 col-sm-12">
           <FloatingInput
             placeholder="Request url or server endpoint"
-            value="http://jsonplaceholder.typicode.com/posts"
+            value={requestUrl}
             addBottomMargin={false}
+            handleOnChange={handleChangeRequestUrl}
           />
         </div>
 

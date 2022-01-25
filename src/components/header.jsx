@@ -2,8 +2,8 @@ const Header = () => {
   return (
     <header className="py-2 mb-3 shadow">
       {/* <!-- Image and text --> */}
-      <nav class="container navbar navbar-light bg-white">
-        <a class="navbar-brand" href="#" className="text-decoration-none">
+      <nav className="container navbar navbar-light bg-white">
+        <a className="navbar-brand" href="#" className="text-decoration-none">
           <h2 className="logo text-center m-0">
             <i className="bi bi-terminal"></i>
             {/* <IconSend w="48" h="48" /> */}

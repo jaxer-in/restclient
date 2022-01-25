@@ -4,12 +4,12 @@ const FloatingInput = (props) => {
   const cssClass = props.addBottomMargin ? "form-floating mb-2" : "form-floating";
 
   return (
-    <div class={cssClass}>
+    <div className={cssClass}>
       <input
         id={idRandom}
         type={props.type}
         value={props.value}
-        class="form-control"
+        className="form-control"
         placeholder={props.placeholder}
         onChange={(e) => props.handleOnChange(e)}
       />

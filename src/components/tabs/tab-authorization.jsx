@@ -22,7 +22,7 @@ const TabAuthorization = ({ authType, handleChangeAuthType }) => {
               <option value={config.authTypes.BEARER_TOKEN}>Bearer Token</option>
               <option value={config.authTypes.BASIC_AUTH}>Basic Auth</option>
             </select>
-            <label for="floatingSelect">Authorization type</label>
+            <label htmlFor="floatingSelect">Authorization type</label>
           </div>
         </div>
         <div className="col-lg-9 col-md-8 col-sm-12">

@@ -6,20 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./index.css";
-
-import Header from "./components/header";
-import Url from "./components/url";
-import Payload from "./components/payload";
-import About from "./components/about";
-import Footer from "./components/footer";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Url />
-    <Payload />
-    <About />
-    <Footer />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

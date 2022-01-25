@@ -16,19 +16,15 @@ const TabRequestBody = () => {
                   <option value="html">text / html</option>
                   <option value="xml">text / xml</option>
                 </select>
-                <label for="floatingSelect">Content type</label>
+                <label htmlFor="floatingSelect">Content type</label>
               </div>
             </div>
 
             <div className="col-lg-12 col-md-4 col-sm-4 col-6 mb-1">
-              <button className="btn btn-light w-100" onclick="beautifyRequestBody()">
-                Beautify
-              </button>
+              <button className="btn btn-light w-100">Beautify</button>
             </div>
             <div className="col-lg-12 col-md-4 col-sm-4 col-6 mb-1">
-              <button className="btn btn-light w-100" onclick="minifyRequestBody();">
-                Minify
-              </button>
+              <button className="btn btn-light w-100">Minify</button>
             </div>
           </div>
         </div>

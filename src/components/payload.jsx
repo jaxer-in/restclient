@@ -104,9 +104,9 @@ const Payload = () => {
         </div>
         <div className="card-body">
           <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <div className="nav nav-tabs" id="nav-tab" role="tablist">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="nav-params-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-params"
@@ -116,12 +116,12 @@ const Payload = () => {
                 aria-selected="true"
               >
                 Params{" "}
-                <span class={params && params.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
+                <span className={params && params.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
                   {params.length}
                 </span>
               </button>
               <button
-                class="nav-link"
+                className="nav-link"
                 id="nav-headers-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-headers"
@@ -131,12 +131,12 @@ const Payload = () => {
                 aria-selected="false"
               >
                 Headers{" "}
-                <span class={headers && headers.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
+                <span className={headers && headers.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
                   {headers.length}
                 </span>
               </button>
               <button
-                class="nav-link"
+                className="nav-link"
                 id="nav-authorizations-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-authorizations"
@@ -146,12 +146,12 @@ const Payload = () => {
                 aria-selected="false"
               >
                 Authorizations{" "}
-                <span class={authType !== config.authTypes.NO_AUTH ? "badge bg-primary" : "badge bg-secondary"}>
+                <span className={authType !== config.authTypes.NO_AUTH ? "badge bg-primary" : "badge bg-secondary"}>
                   {authType}
                 </span>
               </button>
               <button
-                class="nav-link active"
+                className="nav-link active"
                 id="nav-request-body-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-request-body"
@@ -164,9 +164,9 @@ const Payload = () => {
               </button>
             </div>
           </nav>
-          <div class="tab-content" id="nav-tabContent">
+          <div className="tab-content" id="nav-tabContent">
             {/* <!-- Params --> */}
-            <div class="tab-pane fade" id="nav-params" role="tabpanel" aria-labelledby="nav-params-tab">
+            <div className="tab-pane fade" id="nav-params" role="tabpanel" aria-labelledby="nav-params-tab">
               <TabParam
                 params={params}
                 handleAddParam={handleAddParam}
@@ -176,7 +176,7 @@ const Payload = () => {
               />
             </div>
             {/* <!-- Headers --> */}
-            <div class="tab-pane fade" id="nav-headers" role="tabpanel" aria-labelledby="nav-headers-tab">
+            <div className="tab-pane fade" id="nav-headers" role="tabpanel" aria-labelledby="nav-headers-tab">
               <TabHeader
                 headers={headers}
                 handleAddHeader={handleAddHeader}
@@ -186,11 +186,16 @@ const Payload = () => {
               />
             </div>
             {/* <!-- Authorizations --> */}
-            <div class="tab-pane fade" id="nav-authorizations" role="tabpanel" aria-labelledby="nav-authorizations-tab">
+            <div
+              className="tab-pane fade"
+              id="nav-authorizations"
+              role="tabpanel"
+              aria-labelledby="nav-authorizations-tab"
+            >
               <TabAuthorization authType={authType} handleChangeAuthType={handleChangeAuthType} />
             </div>
             <div
-              class="tab-pane fade show active"
+              className="tab-pane fade show active"
               id="nav-request-body"
               role="tabpanel"
               aria-labelledby="nav-request-body-tab"
