@@ -1,7 +1,9 @@
+import FloatingInput from "../common/floating-input";
+
 const KeyValueRow = ({ keyValuePair, handleRemoveParam, handleKeyChange, handleValueChange }) => {
-  const id = `id-key-value-pair-row-${param.id}`;
-  const keyName = `key-value-pair-key-${param.id}`;
-  const valueName = `key-value-pair-value-${param.id}`;
+  const id = `id-key-value-pair-row-${keyValuePair.id}`;
+  const keyName = `key-value-pair-key-${keyValuePair.id}`;
+  const valueName = `key-value-pair-value-${keyValuePair.id}`;
 
   return (
     <div class="row mb-3" id={id}>
@@ -24,7 +26,7 @@ const KeyValueRow = ({ keyValuePair, handleRemoveParam, handleKeyChange, handleV
         />
       </div>
       <div class="col-sm-2 col-12 text-center" title="Remove">
-        <button class="btn btn-outline-secondary w-100" onClick={(e) => handleRemoveParam(keyValuePair)}>
+        <button class="btn btn-outline-secondary w-100" onClick={(e) => handleRemoveParam(e, keyValuePair)}>
           <i class="bi bi-trash"></i>
         </button>
       </div>

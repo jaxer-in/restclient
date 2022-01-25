@@ -9,5 +9,13 @@
     "repository": "https://github.com/jaxer-in/restclient",
     "license": "https://github.com/jaxer-in/restclient/blob/main/LICENSE",
     "openSource": "https://opensource.org"
+  },
+
+  "requestMethods": {
+    "get": "get",
+    "post": "post",
+    "put": "put",
+    "head": "head",
+    "delete": "delete"
   }
 }

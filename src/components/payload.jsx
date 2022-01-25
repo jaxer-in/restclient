@@ -1,16 +1,99 @@
 import { useEffect, useState } from "react";
+import config from "../config.json";
 import TabAuthorization from "./tabs/tab-authorization";
 import TabHeader from "./tabs/tab-header";
 import TabParam from "./tabs/tab-param";
 import TabRequestBody from "./tabs/tab-request-body";
 
 const Payload = () => {
-  const [activeTab, setActiveTab] = useState([""]);
+  const [params, setParams] = useState([]);
+  const [headers, setHeaders] = useState([]);
+  const [authType, setAuthType] = useState(config.authTypes.NO_AUTH);
 
   useEffect(() => {}, []);
 
-  const onTabChange = (e) => {
-    console.log(e.target.id.split("-")[0]);
+  const handleAddParam = (e) => {
+    const clonedParams = [...params];
+    let milis = new Date().getTime();
+
+    let newParam = { id: milis, key: "key", value: "value" };
+    console.log(newParam);
+
+    clonedParams.push(newParam);
+    setParams(clonedParams);
+  };
+
+  const handleRemoveParam = (e, param0) => {
+    if (window.confirm("Are you sure to remove?")) {
+      const filteredParams = params.filter((param) => {
+        return param0.id !== param.id;
+      });
+      setParams(filteredParams);
+    }
+  };
+
+  const handleParamKeyChange = (e, param0) => {
+    const clonedParams = [...params];
+    clonedParams.map((clonedParam) => {
+      if (param0.id === clonedParam.id) {
+        clonedParam.key = e.currentTarget.value;
+      }
+    });
+    setParams(clonedParams);
+  };
+
+  const handleParamValueChange = (e, param0) => {
+    const clonedParams = [...params];
+    clonedParams.map((clonedParam) => {
+      if (param0.id === clonedParam.id) {
+        clonedParam.value = e.currentTarget.value;
+      }
+    });
+    setParams(clonedParams);
+  };
+
+  const handleAddHeader = (e) => {
+    const clonedHeaders = [...headers];
+    let milis = new Date().getTime();
+
+    let newHeader = { id: milis, key: "key", value: "value" };
+    console.log(newHeader);
+
+    clonedHeaders.push(newHeader);
+    setHeaders(clonedHeaders);
+  };
+
+  const handleRemoveHeader = (e, header0) => {
+    if (window.confirm("Are you sure to remove?")) {
+      const filteredParams = headers.filter((h) => {
+        return header0.id !== h.id;
+      });
+      setHeaders(filteredParams);
+    }
+  };
+
+  const handleHeaderKeyChange = (e, header0) => {
+    const clonedHeaders = [...headers];
+    clonedHeaders.map((h) => {
+      if (header0.id === h.id) {
+        h.key = e.currentTarget.value;
+      }
+    });
+    setHeaders(clonedHeaders);
+  };
+
+  const handleHeaderValueChange = (e, header0) => {
+    const clonedHeaders = [...headers];
+    clonedHeaders.map((h) => {
+      if (header0.id === h.id) {
+        h.value = e.currentTarget.value;
+      }
+    });
+    setHeaders(clonedHeaders);
+  };
+
+  const handleChangeAuthType = (e) => {
+    setAuthType(e.currentTarget.value);
   };
 
   return (
@@ -32,7 +115,10 @@ const Payload = () => {
                 aria-controls="nav-params"
                 aria-selected="true"
               >
-                Params
+                Params{" "}
+                <span class={params && params.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
+                  {params.length}
+                </span>
               </button>
               <button
                 class="nav-link"
@@ -44,7 +130,10 @@ const Payload = () => {
                 aria-controls="nav-headers"
                 aria-selected="false"
               >
-                Headers
+                Headers{" "}
+                <span class={headers && headers.length > 0 ? "badge bg-primary" : "badge bg-secondary"}>
+                  {headers.length}
+                </span>
               </button>
               <button
                 class="nav-link"
@@ -56,7 +145,10 @@ const Payload = () => {
                 aria-controls="nav-authorizations"
                 aria-selected="false"
               >
-                Authorizations
+                Authorizations{" "}
+                <span class={authType !== config.authTypes.NO_AUTH ? "badge bg-primary" : "badge bg-secondary"}>
+                  {authType}
+                </span>
               </button>
               <button
                 class="nav-link active"
@@ -75,15 +167,27 @@ const Payload = () => {
           <div class="tab-content" id="nav-tabContent">
             {/* <!-- Params --> */}
             <div class="tab-pane fade" id="nav-params" role="tabpanel" aria-labelledby="nav-params-tab">
-              <TabParam />
+              <TabParam
+                params={params}
+                handleAddParam={handleAddParam}
+                handleRemoveParam={handleRemoveParam}
+                handleKeyChange={handleParamKeyChange}
+                handleValueChange={handleParamValueChange}
+              />
             </div>
             {/* <!-- Headers --> */}
             <div class="tab-pane fade" id="nav-headers" role="tabpanel" aria-labelledby="nav-headers-tab">
-              <TabHeader />
+              <TabHeader
+                headers={headers}
+                handleAddHeader={handleAddHeader}
+                handleRemoveHeader={handleRemoveHeader}
+                handleKeyChange={handleHeaderKeyChange}
+                handleValueChange={handleHeaderValueChange}
+              />
             </div>
             {/* <!-- Authorizations --> */}
             <div class="tab-pane fade" id="nav-authorizations" role="tabpanel" aria-labelledby="nav-authorizations-tab">
-              <TabAuthorization />
+              <TabAuthorization authType={authType} handleChangeAuthType={handleChangeAuthType} />
             </div>
             <div
               class="tab-pane fade show active"

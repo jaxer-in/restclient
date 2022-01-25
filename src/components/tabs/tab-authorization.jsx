@@ -3,14 +3,9 @@ import FloatingInput from "../common/floating-input";
 import config from "../../config.json";
 import Anchor from "../common/anchor";
 
-const TabAuthorization = () => {
-  const [authType, setAuthType] = useState(config.authTypes.NO_AUTH);
-  const [authValue, setAuthValue] = useState();
+const TabAuthorization = ({ authType, handleChangeAuthType }) => {
+  // const [authValue, setAuthValue] = useState();
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleChangeAuthType = (e) => {
-    setAuthType(e.currentTarget.value);
-  };
 
   return (
     <div>
@@ -36,6 +31,7 @@ const TabAuthorization = () => {
       </div>
     </div>
   );
+
   function getAuthContent() {
     if (authType === config.authTypes.NO_AUTH) {
       return (
